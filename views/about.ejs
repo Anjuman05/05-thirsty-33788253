@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+  <head>
+    <title><%=shopName%></title>
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+    <h1>About <%=shopName%> Shop</h1>
+    <p>We sell all sorts of drinks</p>
+    <h2>Our Shop Locations</h2>
+    <p><b>Drop by!</b></p>
+    <% shop.forEach(function(shop, index){ %>
+      <h3><%=shop.name%></h3>
+      <p><b>Address:</b> <%=shop.address%></p>
+      <p><b>Manager:</b> <%=shop.manager%></p>
+    <% }); %>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+    <title><%=shopName%></title>
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+    <h1><%=shopName%> Survey</h1>
+    <p><%=shopName%> wants to hear from you! Please complete this quick survey. </p>
+    <form action="/survey-response" method="POST">
+        First Name: <input type="text" id="fname" name="firstname" required><br>
+        Last Name: <input type="text" id="lname" name="lastname" required><br>
+        Email: <input id="email" type="email" name="email" required><br>
+        How old are you? <input id="age" type="number" name ="age" required><br>
+
+        <b>Which of the following drinks categories do you consume?</b> <br>
+        <% productCategories.forEach(function(category) { %>
+        <input id="<%= category%>" type="radio" name= "drinkCategory" value="<%= category %>" required>
+        <%= category %>
+        <%}); %>
+        <br>
+        
+        <b>Are you a student?</b> <br>
+        Yes <input type="checkbox" id="student" name="isStudent" value="Yes"><br>
+        <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>
